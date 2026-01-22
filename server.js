@@ -8,11 +8,11 @@ app.use(express.json());
 
 /* ---------- DATABASE CONNECTION ---------- */
 const db = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "Huijsen.24",
-  database: "meds",
-  port: 3306
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
 });
 
 db.connect(err => {
